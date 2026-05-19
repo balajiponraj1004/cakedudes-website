@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order a Custom Cake | Cake Beauties — Toronto & GTA</title>
+  <meta name="description" content="Order a premium custom cake from Cake Dudes. Birthday, wedding, anniversary & eggless cakes in Toronto & GTA. Free design consultation. Response within 2 hours." />
+  <meta name="geo.region" content="CA-ON" />
+  <meta name="geo.placename" content="Mississauga, Ontario, Canada" />
+  <link rel="canonical" href="https://www.cakedudes.ca/order.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.cakedudes.ca/"},
+      {"@type":"ListItem","position":2,"name":"Order a Cake","item":"https://www.cakedudes.ca/order.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Cake Order",
+    "provider": {"@type":"Bakery","name":"Cake Dudes","url":"https://www.cakedudes.ca"},
+    "areaServed": "Greater Toronto Area, Ontario, Canada",
+    "description": "Order a fully custom birthday, wedding, anniversary or eggless celebration cake. Free design consultation. Pricing confirmed in writing before you commit.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cake Pricing Tiers",
+      "itemListElement": [
+        {"@type":"Offer","name":"Signature Cake","price":"60","priceCurrency":"CAD"},
+        {"@type":"Offer","name":"Premium Cake","price":"150","priceCurrency":"CAD"},
+        {"@type":"Offer","name":"Luxury Cake","price":"350","priceCurrency":"CAD"}
+      ]
+    }
+  }
+  </script>
+  <style>
+    /* Pricing section on this page */
+    .pricing-section { background: var(--cream-light); padding: 80px 0; }
+    .factors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .factor-card { background: var(--white); border-radius: 14px; padding: 20px; border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 14px; }
+    .factor-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .factor-title { font-weight: 700; font-size: 0.88rem; color: var(--brown); margin-bottom: 4px; }
+    .factor-desc { font-size: 0.78rem; color: var(--text-light); }
+    @media (max-width: 768px) { .factors-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .factors-grid { grid-template-columns: 1fr; } }
+    #form-success { display:none; text-align:center; padding: 60px 20px; }
+    #form-success .success-icon { font-size: 4rem; margin-bottom: 16px; }
+    #form-success h3 { font-family:'Cormorant Garamond',serif; font-size:2rem; color:var(--brown); margin-bottom:12px; }
+    #form-success p { color: var(--text-light); max-width: 400px; margin: 0 auto 24px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled-always">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-brown.png" class="nav-logo-img logo-dark" alt="Cake Dudes" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#" data-whatsapp="Hi Cake Beauties! I'd like to order a custom cake 🎂" class="btn btn-primary btn-sm">💬 WhatsApp</a>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="order.html">Order a Cake</a><a href="about.html">Our Story</a><a href="contact.html">Contact</a>
+  <a href="order.html" class="btn btn-primary">Order Now ✦</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Custom Cake Order</span>
+    <h1>Let's Create Your<br/><em>Dream Cake</em></h1>
+    <p>Fill in your details below and we'll respond within 2 hours with a personalised quote. Free design consultation included.</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="container"><div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Order a Cake</span></div></div>
+
+<!-- ORDER FORM SECTION -->
+<section class="order-form-section">
+  <div class="container">
+    <div class="order-layout">
+
+      <!-- FORM CARD -->
+      <div class="form-card">
+        <div class="form-title">Your Cake Inquiry</div>
+        <div class="form-subtitle">Tell us everything — we love the details. All fields marked * are required.</div>
+
+        <!-- Step Indicator -->
+        <div class="form-step-indicator">
+          <div class="form-step-dot active"></div>
+          <div class="form-step-dot"></div>
+          <div class="form-step-dot"></div>
+          <div class="form-step-dot"></div>
+        </div>
+
+        <form id="order-form" novalidate>
+
+          <!-- STEP 1: Event Details -->
+          <div class="form-step">
+            <div style="margin-bottom:28px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--brown); margin-bottom:4px; font-weight:600;">Step 1 — Your Event Details</div>
+              <div style="font-size:0.82rem; color:var(--text-light);">Tell us about you and your celebration.</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="name">Full Name *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Priya Sharma" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">WhatsApp Number *</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (647) 000-0000" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="hello@email.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="event_date">Event Date *</label>
+                <input type="date" id="event_date" name="event_date" class="form-input" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Occasion *</label>
+              <div class="form-chip-group">
+                <span class="form-chip selected" data-value="birthday">🎂 Birthday</span>
+                <span class="form-chip" data-value="wedding">💒 Wedding</span>
+                <span class="form-chip" data-value="anniversary">💕 Anniversary</span>
+                <span class="form-chip" data-value="babyshower">🍼 Baby Shower</span>
+                <span class="form-chip" data-value="kids">🦄 Kids Party</span>
+                <span class="form-chip" data-value="corporate">🏢 Corporate</span>
+                <span class="form-chip" data-value="other">✨ Other</span>
+              </div>
+            </div>
+            <select name="event_type" id="event_type" class="form-select" style="display:none;">
+              <option>Birthday</option><option>Wedding</option><option>Anniversary</option>
+              <option>Baby Shower</option><option>Kids Party</option><option>Other</option>
+            </select>
+            <div class="form-actions">
+              <button type="button" data-next-step class="btn btn-primary btn-lg" style="width:100%;">Continue — Cake Details →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2: Cake Details -->
+          <div class="form-step" style="display:none;">
+            <div style="margin-bottom:28px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--brown); margin-bottom:4px; font-weight:600;">Step 2 — Cake Details</div>
+              <div style="font-size:0.82rem; color:var(--text-light);">Tell us about your dream cake design.</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="cake_size">Cake Size</label>
+                <select id="cake_size" name="cake_size" class="form-select">
+                  <option value="">Select size...</option>
+                  <option>500g (~6–8 servings)</option>
+                  <option>1kg (~12–15 servings)</option>
+                  <option>1.5kg (~18–22 servings)</option>
+                  <option>2kg (~25–30 servings)</option>
+                  <option>3kg (~40–45 servings)</option>
+                  <option>Custom / Multi-tier</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="servings">Approx. Servings</label>
+                <input type="number" id="servings" name="servings" class="form-input" placeholder="e.g. 20 people" min="1" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Flavour Preference</label>
+              <div class="form-chip-group">
+                <span class="form-chip selected" data-value="vanilla">🍦 Vanilla</span>
+                <span class="form-chip" data-value="chocolate">🍫 Chocolate Truffle</span>
+                <span class="form-chip" data-value="blackforest">🍒 Black Forest</span>
+                <span class="form-chip" data-value="redvelvet">🔴 Red Velvet</span>
+                <span class="form-chip" data-value="butterscotch">🍯 Butterscotch</span>
+                <span class="form-chip" data-value="mango">🥭 Mango</span>
+                <span class="form-chip" data-value="rasmalai">🥛 Rasmalai</span>
+                <span class="form-chip" data-value="dutchtruffle">🍫 Dutch Truffle</span>
+                <span class="form-chip" data-value="blueberry">🫐 Blueberry</span>
+                <span class="form-chip" data-value="custom">✨ Custom</span>
+              </div>
+              <input type="hidden" name="flavour" id="flavour_input" value="Vanilla" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Cake Finish</label>
+              <div class="form-toggle-group">
+                <div class="form-toggle selected">Buttercream</div>
+                <div class="form-toggle">Fondant</div>
+                <div class="form-toggle">Fresh Cream</div>
+                <div class="form-toggle">Not Sure</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Eggless Required?</label>
+              <div class="form-toggle-group" style="max-width:300px;">
+                <div class="form-toggle selected">Yes, Eggless Please</div>
+                <div class="form-toggle">No Preference</div>
+              </div>
+            </div>
+            <div class="form-actions" style="gap:12px;">
+              <button type="button" data-prev-step class="btn btn-secondary" style="flex:1;">← Back</button>
+              <button type="button" data-next-step class="btn btn-primary" style="flex:2;">Continue — Delivery →</button>
+            </div>
+          </div>
+
+          <!-- STEP 3: Delivery -->
+          <div class="form-step" style="display:none;">
+            <div style="margin-bottom:28px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--brown); margin-bottom:4px; font-weight:600;">Step 3 — Pickup or Delivery</div>
+              <div style="font-size:0.82rem; color:var(--text-light);">How would you like to receive your cake?</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Order Type</label>
+              <div class="form-toggle-group" style="max-width:400px;">
+                <div class="form-toggle selected">🏠 Pickup from Studio</div>
+                <div class="form-toggle">🚗 Delivery to Me</div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="city">Your City / Area *</label>
+                <input type="text" id="city" name="city" class="form-input" placeholder="e.g. Brampton, ON" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="pickup_time">Preferred Time</label>
+                <input type="time" id="pickup_time" name="pickup_time" class="form-input" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="address">Delivery Address (if applicable)</label>
+              <input type="text" id="address" name="address" class="form-input" placeholder="Full address for delivery" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Add-ons (optional)</label>
+              <div class="form-chip-group">
+                <span class="form-chip" data-value="cupcakes">🧁 Matching Cupcakes (+$45)</span>
+                <span class="form-chip" data-value="topper">✨ Custom Topper (+$15)</span>
+                <span class="form-chip" data-value="dessertbox">🎁 Dessert Box (+$40)</span>
+                <span class="form-chip" data-value="candles">🕯️ Candles (+$5)</span>
+                <span class="form-chip" data-value="package">🎉 Full Party Package (+$180)</span>
+              </div>
+            </div>
+            <div class="form-actions" style="gap:12px;">
+              <button type="button" data-prev-step class="btn btn-secondary" style="flex:1;">← Back</button>
+              <button type="button" data-next-step class="btn btn-primary" style="flex:2;">Continue — Final Details →</button>
+            </div>
+          </div>
+
+          <!-- STEP 4: Budget & Notes -->
+          <div class="form-step" style="display:none;">
+            <div style="margin-bottom:28px;">
+              <div style="font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--brown); margin-bottom:4px; font-weight:600;">Step 4 — Budget &amp; Final Notes</div>
+              <div style="font-size:0.82rem; color:var(--text-light);">Almost done! Share your budget and any special requirements.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Budget Range (CAD)</label>
+              <div class="form-chip-group">
+                <span class="form-chip" data-value="under100">Under $100</span>
+                <span class="form-chip selected" data-value="100-200">$100 – $200</span>
+                <span class="form-chip" data-value="200-400">$200 – $400</span>
+                <span class="form-chip" data-value="400-700">$400 – $700</span>
+                <span class="form-chip" data-value="700plus">$700+</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="design_ref">Design Reference (Instagram link or description)</label>
+              <input type="text" id="design_ref" name="design_ref" class="form-input" placeholder="Paste Instagram/Pinterest link or describe your vision..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="notes">Additional Notes / Special Requests</label>
+              <textarea id="notes" name="notes" class="form-textarea" placeholder="Any allergies, dietary requirements, colour preferences, message on cake, number of candles..."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="how_found">How Did You Hear About Us?</label>
+              <select id="how_found" name="how_found" class="form-select">
+                <option value="">Select...</option>
+                <option>Instagram</option>
+                <option>Google Search</option>
+                <option>Friend / Family Referral</option>
+                <option>WhatsApp Group</option>
+                <option>YouTube</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <!-- Trust reminder -->
+            <div style="background:rgba(249,200,62,0.08); border:1px solid rgba(249,200,62,0.3); border-radius:12px; padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; gap:12px;">
+              <span style="font-size:1.4rem;">🔒</span>
+              <div style="font-size:0.82rem; color:var(--text-mid);">
+                <strong style="color:var(--brown); display:block; margin-bottom:2px;">Price confirmed before any payment</strong>
+                We'll send you a detailed quote. No commitment until you approve.
+              </div>
+            </div>
+
+            <div class="form-actions" style="flex-direction:column; gap:12px;">
+              <div style="display:flex; gap:12px;">
+                <button type="button" data-prev-step class="btn btn-secondary" style="flex:1;">← Back</button>
+                <button type="submit" class="btn btn-primary btn-lg" style="flex:2;">Submit Inquiry ✦</button>
+              </div>
+              <button type="button" id="wa-submit" class="btn btn-lg" style="background:#25D366; color:white; justify-content:center; width:100%; font-size:0.9rem;">
+                💬 Or Send Directly via WhatsApp (Faster Response)
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+        <!-- Success State -->
+        <div id="form-success">
+          <div class="success-icon">🎂</div>
+          <h3>Thank You! We've Got Your Order!</h3>
+          <p>We'll review your details and respond within 2 hours with a personalised quote and design confirmation.</p>
+          <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <a href="gallery.html" class="btn btn-secondary">Browse More Designs</a>
+            <a href="#" data-whatsapp="Hi! I just submitted a cake inquiry. Just following up! 🎂" class="btn btn-primary">💬 Follow Up on WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Why Choose Cake Beauties?</div>
+          <div class="trust-point">
+            <div class="trust-point-icon">⏰</div>
+            <div class="trust-point-text">
+              <strong>2-Hour Response</strong>
+              <span>We reply fast — usually within 2 hours on WhatsApp</span>
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">🔒</div>
+            <div class="trust-point-text">
+              <strong>Price Guaranteed in Writing</strong>
+              <span>No surprise charges. You approve the price before paying.</span>
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">🌿</div>
+            <div class="trust-point-text">
+              <strong>Eggless Available</strong>
+              <span>Every flavour available fully eggless — same quality</span>
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">📸</div>
+            <div class="trust-point-text">
+              <strong>Custom Designs</strong>
+              <span>Send a reference photo — we'll make it even better</span>
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">🎂</div>
+            <div class="trust-point-text">
+              <strong>200+ Happy Customers</strong>
+              <span>Trusted by families across Toronto &amp; GTA</span>
+            </div>
+          </div>
+          <div class="trust-point">
+            <div class="trust-point-icon">🚗</div>
+            <div class="trust-point-text">
+              <strong>Pickup &amp; Delivery</strong>
+              <span>Studio pickup + limited delivery across GTA</span>
+            </div>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <div class="wa-cta-card">
+            <div style="font-size:2rem; margin-bottom:8px;">💬</div>
+            <strong style="font-size:1rem; display:block; margin-bottom:8px;">Prefer WhatsApp?</strong>
+            <p>Most customers order directly via WhatsApp for faster responses. We're online Mon–Sun 9am–7pm.</p>
+            <a href="#" data-whatsapp="Hi Cake Beauties! I'd like to order a custom cake 🎂 Can you help me?" class="btn btn-white btn-sm" style="width:100%; justify-content:center;">Chat Now on WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Sample Cakes mini gallery -->
+        <div class="sidebar-card" style="margin-top: 20px;">
+          <div class="sidebar-card-title">Recent Orders</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+            <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=200&q=70&auto=format&fit=crop" alt="Recent birthday cake order" style="border-radius:10px; width:100%; height:100px; object-fit:cover;" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200&q=70&auto=format&fit=crop" alt="Recent chocolate cake order" style="border-radius:10px; width:100%; height:100px; object-fit:cover;" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=200&q=70&auto=format&fit=crop" alt="Recent designer cake order" style="border-radius:10px; width:100%; height:100px; object-fit:cover;" loading="lazy"/>
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&q=70&auto=format&fit=crop" alt="Recent wedding cake order" style="border-radius:10px; width:100%; height:100px; object-fit:cover;" loading="lazy"/>
+          </div>
+          <a href="gallery.html" class="btn btn-secondary btn-sm" style="width:100%; justify-content:center; margin-top:12px;">View Full Gallery →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Transparent Pricing</span>
+      <h2>Our Pricing Tiers</h2>
+      <p>Every cake is custom-made. Starting prices below — final price confirmed in writing before you commit. No surprises, ever.</p>
+    </div>
+    <div class="pricing-grid" data-stagger>
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Signature</div>
+        <div class="pricing-name">Classic Cake</div>
+        <div class="pricing-from">Starting from</div>
+        <div class="pricing-price"><sup>CA $</sup>60</div>
+        <div class="pricing-desc">Perfect for intimate celebrations and simple custom designs with a beautiful finish.</div>
+        <div class="pricing-features">
+          <div class="pricing-feature">500g–1kg size</div>
+          <div class="pricing-feature">Fresh cream or buttercream finish</div>
+          <div class="pricing-feature">Text + simple decoration</div>
+          <div class="pricing-feature">Choice of any flavour</div>
+          <div class="pricing-feature">Eggless available</div>
+        </div>
+        <a href="order.html" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;">Get a Quote</a>
+      </div>
+      <div class="pricing-card featured reveal">
+        <div class="pricing-popular">Most Popular</div>
+        <div class="pricing-tier">Premium</div>
+        <div class="pricing-name">Themed Cake</div>
+        <div class="pricing-from">Starting from</div>
+        <div class="pricing-price"><sup>CA $</sup>150</div>
+        <div class="pricing-desc">Custom themed birthday, anniversary, or celebration cakes with detailed design work.</div>
+        <div class="pricing-features">
+          <div class="pricing-feature">1kg–2kg size</div>
+          <div class="pricing-feature">Fondant or premium buttercream</div>
+          <div class="pricing-feature">Custom theme + toppers</div>
+          <div class="pricing-feature">Detailed design work</div>
+          <div class="pricing-feature">Eggless available</div>
+          <div class="pricing-feature">Free design consultation</div>
+        </div>
+        <a href="order.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">Get a Quote ✦</a>
+      </div>
+      <div class="pricing-card reveal">
+        <div class="pricing-tier">Luxury</div>
+        <div class="pricing-name">Wedding / Tiered</div>
+        <div class="pricing-from">Starting from</div>
+        <div class="pricing-price"><sup>CA $</sup>350</div>
+        <div class="pricing-desc">Stunning multi-tier wedding and event cakes with floral arrangements and sculpted artistry.</div>
+        <div class="pricing-features">
+          <div class="pricing-feature">Multi-tier, custom servings</div>
+          <div class="pricing-feature">Floral / sculpted / metallic</div>
+          <div class="pricing-feature">Premium fondant work</div>
+          <div class="pricing-feature">Dedicated design session</div>
+          <div class="pricing-feature">Priority scheduling</div>
+          <div class="pricing-feature">Delivery included (GTA)</div>
+        </div>
+        <a href="order.html" class="btn btn-secondary btn-lg" style="width:100%; justify-content:center;">Get a Quote</a>
+      </div>
+    </div>
+
+    <!-- Price factors -->
+    <div style="margin-top: 64px;" class="reveal">
+      <div class="section-header" style="margin-bottom: 32px;">
+        <span class="section-label">What Affects Pricing</span>
+        <h3 style="font-size:1.8rem;">Final Price Depends On</h3>
+      </div>
+      <div class="factors-grid">
+        <div class="factor-card">
+          <div class="factor-icon">⚖️</div>
+          <div><div class="factor-title">Size &amp; Servings</div><div class="factor-desc">Larger cakes with more servings cost more. We help you pick the right size.</div></div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🎨</div>
+          <div><div class="factor-title">Design Complexity</div><div class="factor-desc">Sculpted and intricate fondant work requires more time and skill.</div></div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🍰</div>
+          <div><div class="factor-title">Flavour Choice</div><div class="factor-desc">Some premium flavours (rasmalai, Dutch truffle) may incur a small premium.</div></div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">✨</div>
+          <div><div class="factor-title">Finish Type</div><div class="factor-desc">Fondant requires more prep time than fresh cream or buttercream finishes.</div></div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">👑</div>
+          <div><div class="factor-title">Custom Toppers</div><div class="factor-desc">Acrylic, edible gold, or personalised toppers are add-ons.</div></div>
+        </div>
+        <div class="factor-card">
+          <div class="factor-icon">🚗</div>
+          <div><div class="factor-title">Delivery Distance</div><div class="factor-desc">Delivery fees are distance-based. Pickup is always free.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-40">
+      <div style="background:var(--gold); display:inline-flex; align-items:center; gap:12px; padding:16px 32px; border-radius:var(--radius-pill); font-weight:700; color:var(--brown);">
+        🔒 Price always confirmed in writing before any payment
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="images/logo-white.png" alt="Cake Dudes" class="footer-logo-img" style="margin-bottom:12px;" />
+          <p class="footer-brand-desc">Premium custom cakes for every celebration. Freshly baked to order. Serving Toronto &amp; GTA.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cakedudes.tnj/" target="_blank" rel="noopener" class="footer-social-btn">📸</a>
+            <a href="tel:+14379871237" class="footer-social-btn">📞</a>
+            <a href="#" data-whatsapp="Hi!" class="footer-social-btn">💬</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Cake Gallery</a></li>
+            <li><a href="order.html">Order a Cake</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Cake Categories</div>
+          <ul class="footer-links">
+            <li><a href="gallery.html?filter=birthday">Birthday Cakes</a></li>
+            <li><a href="gallery.html?filter=wedding">Wedding Cakes</a></li>
+            <li><a href="gallery.html?filter=eggless">Eggless Cakes</a></li>
+            <li><a href="gallery.html?filter=designer">Designer Cakes</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📱</span><a href="tel:+14379871237" style="color:rgba(243,219,195,0.65)">+1 (437) 987-1237</a></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">✉</span><a href="mailto:cakedudes.info@gmail.com" style="color:rgba(243,219,195,0.65)">cakedudes.info@gmail.com</a></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span style="color:rgba(243,219,195,0.65)">Mississauga, ON & Thanjavur, India</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Cake Beauties. All rights reserved.</p>
+      <p class="footer-locations">Toronto · Brampton · Mississauga · Scarborough · Markham · Hamilton · Thanjavur</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-whatsapp="Hi Cake Beauties! I'd like to order a custom cake 🎂" class="whatsapp-float">
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<div class="mobile-cta-bar">
+  <a href="tel:+14379871237" class="btn btn-secondary btn-sm">📞 Call</a>
+  <a href="#" data-whatsapp="Hi Cake Beauties! I'd like to place an order 🎂" class="btn btn-primary btn-sm">💬 WhatsApp Order</a>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

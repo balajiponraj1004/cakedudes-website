@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cake Gallery | Custom Cake Designs — Cake Beauties</title>
+  <meta name="description" content="Browse our full gallery of custom birthday, wedding, anniversary, kids theme and eggless cakes. Every cake is handcrafted to order. Starting from $60." />
+  <meta name="geo.region" content="CA-ON" />
+  <meta name="geo.placename" content="Mississauga, Ontario, Canada" />
+  <meta name="geo.position" content="43.8971;-78.9429" />
+  <meta name="ICBM" content="43.8971, -78.9429" />
+  <link rel="canonical" href="https://www.cakedudes.ca/gallery.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.cakedudes.ca/"},
+      {"@type":"ListItem","position":2,"name":"Gallery","item":"https://www.cakedudes.ca/gallery.html"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "name": "Cake Dudes Custom Cake Gallery",
+    "description": "Gallery of custom birthday, wedding, eggless, designer and anniversary cakes handcrafted by Cake Dudes in Toronto and GTA",
+    "url": "https://www.cakedudes.ca/gallery.html",
+    "author": {"@type":"Organization","name":"Cake Dudes","url":"https://www.cakedudes.ca"}
+  }
+  </script>
+  <style>
+    .gallery-page-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 1024px) { .gallery-page-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .gallery-page-grid { grid-template-columns: 1fr; } }
+
+    .gallery-page-item { border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .gallery-page-item:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .gallery-page-item img { width: 100%; height: 320px; object-fit: cover; transition: transform 0.5s ease; display: block; }
+    .gallery-page-item:hover img { transform: scale(1.06); }
+    .gallery-page-info { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(67,29,19,0.95) 0%, transparent 100%); padding: 36px 24px 20px; }
+    .gallery-page-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+    .gallery-page-tag { font-size: 0.72rem; color: var(--gold); margin-bottom: 6px; letter-spacing: 0.06em; }
+    .gallery-page-price { font-size: 0.78rem; color: rgba(243,219,195,0.7); margin-bottom: 12px; }
+    .gallery-page-item .btn { font-size: 0.74rem; padding: 8px 18px; }
+
+    .gallery-empty { text-align: center; padding: 80px 20px; color: var(--text-light); }
+    .gallery-empty .emoji { font-size: 3rem; margin-bottom: 16px; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled-always">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-brown.png" class="nav-logo-img logo-dark" alt="Cake Dudes" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="order.html" class="btn btn-primary btn-sm">Order Now ✦</a>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="order.html">Order a Cake</a><a href="about.html">Our Story</a><a href="contact.html">Contact</a>
+  <a href="order.html" class="btn btn-primary">Order Now ✦</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">Our Portfolio</span>
+    <h1>Every Cake Tells a Story</h1>
+    <p>Browse our collection of handcrafted custom cakes. Every design is original, every bite is unforgettable. Find your inspiration, then let us create yours.</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div class="container">
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Gallery</span>
+  </div>
+</div>
+
+<!-- GALLERY MAIN -->
+<section class="section-sm" style="background: var(--cream-white);">
+  <div class="container">
+
+    <!-- Filter Bar -->
+    <div class="gallery-filter" id="gallery-filters">
+      <button class="filter-btn active" data-filter="all">✦ All Cakes</button>
+      <button class="filter-btn" data-filter="birthday">🎂 Birthday</button>
+      <button class="filter-btn" data-filter="wedding">💒 Wedding</button>
+      <button class="filter-btn" data-filter="kids">🦄 Kids Theme</button>
+      <button class="filter-btn" data-filter="anniversary">💕 Anniversary</button>
+      <button class="filter-btn" data-filter="babyshower">🍼 Baby Shower</button>
+      <button class="filter-btn" data-filter="eggless">🌿 Eggless</button>
+      <button class="filter-btn" data-filter="designer">👑 Designer</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-page-grid" id="gallery-grid">
+
+      <!-- Birthday -->
+      <div class="gallery-page-item reveal" data-category="birthday" data-lightbox="images/cakes/cake1.jpeg">
+        <img src="images/cakes/cake1.jpeg" alt="Butterfly birthday cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🎂 Birthday · Vanilla Cream</div>
+          <div class="gallery-page-name">Butterfly Birthday Dream</div>
+          <div class="gallery-page-price">Starting from CA $110</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Birthday Football -->
+      <div class="gallery-page-item reveal" data-category="birthday" data-lightbox="images/cakes/newcake2.jpeg">
+        <img src="images/cakes/newcake2.jpeg" alt="Football Ronaldo birthday cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🎂 Birthday · Sports Theme</div>
+          <div class="gallery-page-name">Champion's Birthday Cake</div>
+          <div class="gallery-page-price">Starting from CA $175</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Birthday Stars -->
+      <div class="gallery-page-item reveal" data-category="birthday" data-lightbox="images/cakes/newcake3.jpeg">
+        <img src="images/cakes/newcake3.jpeg" alt="Star birthday cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">⭐ Birthday · Blue Ombre</div>
+          <div class="gallery-page-name">Starlight Birthday Cake</div>
+          <div class="gallery-page-price">Starting from CA $130</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Designer Paw Patrol -->
+      <div class="gallery-page-item reveal" data-category="designer" data-lightbox="images/cakes/newcake4.jpeg">
+        <img src="images/cakes/newcake4.jpeg" alt="Paw Patrol sculpted designer cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">👑 Designer · Paw Patrol</div>
+          <div class="gallery-page-name">Paw Patrol Adventure</div>
+          <div class="gallery-page-price">Starting from CA $250</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Kids Cocomelon -->
+      <div class="gallery-page-item reveal" data-category="kids" data-lightbox="images/cakes/newcake1.jpeg">
+        <img src="images/cakes/newcake1.jpeg" alt="Cocomelon kids birthday cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🍉 Kids · Cocomelon Theme</div>
+          <div class="gallery-page-name">Cocomelon Party Cake</div>
+          <div class="gallery-page-price">Starting from CA $160</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Anniversary Mango -->
+      <div class="gallery-page-item reveal" data-category="anniversary" data-lightbox="images/cakes/newcake5.jpeg">
+        <img src="images/cakes/newcake5.jpeg" alt="Mango anniversary cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">💕 Anniversary · Mango Cream</div>
+          <div class="gallery-page-name">Tropical Anniversary Cake</div>
+          <div class="gallery-page-price">Starting from CA $140</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Kids Mermaid -->
+      <div class="gallery-page-item reveal" data-category="kids" data-lightbox="images/cakes/newcake7.jpeg">
+        <img src="images/cakes/newcake7.jpeg" alt="Mermaid kids birthday cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🧜 Kids · Mermaid Theme</div>
+          <div class="gallery-page-name">Under the Sea Dream</div>
+          <div class="gallery-page-price">Starting from CA $190</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Crown Designer -->
+      <div class="gallery-page-item reveal" data-category="wedding" data-lightbox="images/cakes/cake9.jpeg">
+        <img src="images/cakes/cake9.jpeg" alt="Royal crown designer wedding cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">💒 Wedding · Fondant Crown</div>
+          <div class="gallery-page-name">Royal Crown Creation</div>
+          <div class="gallery-page-price">Starting from CA $450</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Baby Shower Hello Kitty -->
+      <div class="gallery-page-item reveal" data-category="babyshower" data-lightbox="images/cakes/newcake6.jpeg">
+        <img src="images/cakes/newcake6.jpeg" alt="Hello Kitty baby shower cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🍼 Baby Shower · Hello Kitty</div>
+          <div class="gallery-page-name">Hello Kitty Celebration</div>
+          <div class="gallery-page-price">Starting from CA $170</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Designer Superhero -->
+      <div class="gallery-page-item reveal" data-category="designer" data-lightbox="images/cakes/newcake8.jpeg">
+        <img src="images/cakes/newcake8.jpeg" alt="Superhero Batman Spiderman cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🦸 Designer · Superhero</div>
+          <div class="gallery-page-name">Superhero Birthday Bash</div>
+          <div class="gallery-page-price">Starting from CA $220</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+      <!-- Kids Unicorn -->
+      <div class="gallery-page-item reveal" data-category="kids" data-lightbox="images/cakes/cake10.jpeg">
+        <img src="images/cakes/cake10.jpeg" alt="Unicorn rainbow kids cake by Cake Dudes" loading="lazy"/>
+        <div class="gallery-page-info">
+          <div class="gallery-page-tag">🦄 Kids · Unicorn Theme</div>
+          <div class="gallery-page-name">Unicorn Rainbow Magic</div>
+          <div class="gallery-page-price">Starting from CA $150</div>
+          <a href="order.html" class="btn btn-primary btn-sm">Customize This</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA -->
+    <div style="background: linear-gradient(135deg, var(--cream), var(--cream-light)); border-radius: 24px; padding: 48px; text-align: center; margin-top: 64px;" class="reveal">
+      <span class="section-label">Don't See What You're Looking For?</span>
+      <h2 style="font-size: 2rem; margin: 12px 0;">We Can Build Any Design</h2>
+      <p style="max-width: 520px; margin: 0 auto 32px;">Share your reference photo or describe your dream cake and we'll bring it to life — exactly as you imagined it.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="order.html" class="btn btn-primary btn-lg">Start Your Order ✦</a>
+        <a href="#" data-whatsapp="Hi Cake Beauties! I have a custom cake design in mind that I'd love to share with you 📸" class="btn btn-secondary btn-lg">💬 Send Reference Photo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="images/logo-white.png" alt="Cake Dudes" class="footer-logo-img" style="margin-bottom:12px;" />
+          <p class="footer-brand-desc">Premium custom cakes for every celebration. Serving Toronto &amp; GTA with love, artistry, and unforgettable taste.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cakedudes.tnj/" target="_blank" rel="noopener" class="footer-social-btn">📸</a>
+            <a href="tel:+14379871237" class="footer-social-btn">📞</a>
+            <a href="#" data-whatsapp="Hi Cake Beauties!" class="footer-social-btn">💬</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Cake Gallery</a></li>
+            <li><a href="order.html">Order a Cake</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Categories</div>
+          <ul class="footer-links">
+            <li><a href="gallery.html?filter=birthday">Birthday Cakes</a></li>
+            <li><a href="gallery.html?filter=wedding">Wedding Cakes</a></li>
+            <li><a href="gallery.html?filter=kids">Kids Theme Cakes</a></li>
+            <li><a href="gallery.html?filter=eggless">Eggless Cakes</a></li>
+            <li><a href="gallery.html?filter=designer">Designer Cakes</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📱</span><a href="tel:+14379871237" style="color:rgba(243,219,195,0.65)">+1 (437) 987-1237</a></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">✉</span><a href="mailto:cakedudes.info@gmail.com" style="color:rgba(243,219,195,0.65)">cakedudes.info@gmail.com</a></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">📍</span><span style="color:rgba(243,219,195,0.65)">Mississauga, ON & Thanjavur, India</span></div>
+          <div class="footer-contact-item"><span class="footer-contact-icon">🕐</span><span style="color:rgba(243,219,195,0.65)">Mon–Sun: 9am–7pm</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Cake Beauties. All rights reserved.</p>
+      <p class="footer-locations">Toronto · Brampton · Mississauga · Scarborough · Markham · Hamilton · Thanjavur</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" data-whatsapp="Hi Cake Beauties! I'd like to order a custom cake 🎂" class="whatsapp-float">
+  <div class="whatsapp-tooltip">Order via WhatsApp</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="mobile-cta-bar">
+  <a href="tel:+14379871237" class="btn btn-secondary btn-sm">📞 Call</a>
+  <a href="#" data-whatsapp="Hi Cake Beauties! I saw the gallery and I'd like to order 🎂" class="btn btn-primary btn-sm">💬 Order via WhatsApp</a>
+</div>
+
+<div class="lightbox"><button class="lightbox-close">✕</button><img src="" alt="Cake detail view" /></div>
+
+<script src="js/main.js"></script>
+<script>
+  // Read URL filter param
+  const params = new URLSearchParams(window.location.search);
+  const filterParam = params.get('filter');
+  if (filterParam) {
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.querySelector(`.filter-btn[data-filter="${filterParam}"]`);
+      if (btn) setTimeout(() => btn.click(), 300);
+    });
+  }
+</script>
+</body>
+</html>
