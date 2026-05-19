@@ -3,55 +3,55 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://www.cakedudes.ca/</loc>
+    <loc>https://www.thecakedudes.com/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://www.cakedudes.ca/images/cakes/cake1.jpeg</image:loc>
+      <image:loc>https://www.thecakedudes.com/images/cakes/cake1.jpeg</image:loc>
       <image:title>Custom Birthday Cake by Cake Dudes</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cakedudes.ca/images/cakes/cake9.jpeg</image:loc>
+      <image:loc>https://www.thecakedudes.com/images/cakes/cake9.jpeg</image:loc>
       <image:title>Royal Crown Designer Cake by Cake Dudes Toronto</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.cakedudes.ca/gallery.html</loc>
+    <loc>https://www.thecakedudes.com/gallery.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.cakedudes.ca/images/cakes/cake2.jpeg</image:loc>
+      <image:loc>https://www.thecakedudes.com/images/cakes/cake2.jpeg</image:loc>
       <image:title>Cake Dudes Gallery — Birthday Cake</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cakedudes.ca/images/cakes/cake5.jpeg</image:loc>
+      <image:loc>https://www.thecakedudes.com/images/cakes/cake5.jpeg</image:loc>
       <image:title>Cake Dudes Gallery — Designer Cake</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://www.cakedudes.ca/images/cakes/cake9.jpeg</image:loc>
+      <image:loc>https://www.thecakedudes.com/images/cakes/cake9.jpeg</image:loc>
       <image:title>Cake Dudes Gallery — Wedding Cake</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://www.cakedudes.ca/order.html</loc>
+    <loc>https://www.thecakedudes.com/order.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
 
   <url>
-    <loc>https://www.cakedudes.ca/about.html</loc>
+    <loc>https://www.thecakedudes.com/about.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.cakedudes.ca/contact.html</loc>
+    <loc>https://www.thecakedudes.com/contact.html</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
