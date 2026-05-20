@@ -1,0 +1,49 @@
+name: Refresh Instagram Access Token
+
+# Runs every 50 days to keep the long-lived token alive (tokens expire in 60 days)
+on:
+  schedule:
+    - cron: '0 6 */50 * *'
+  workflow_dispatch:
+
+jobs:
+  refresh-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Refresh long-lived access token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, requests
+
+          token = os.environ["IG_ACCESS_TOKEN"]
+
+          # Exchange for a fresh long-lived token
+          url = (
+              "https://graph.instagram.com/refresh_access_token"
+              f"?grant_type=ig_refresh_token&access_token={token}"
+          )
+          resp = requests.get(url, timeout=30)
+          resp.raise_for_status()
+          data = resp.json()
+          new_token  = data["access_token"]
+          expires_in = data.get("expires_in", 0)
+          print(f"Token refreshed. Expires in {expires_in // 86400} days.")
+
+          # Update the GitHub secret via the API
+          gh_token = os.environ.get("GH_TOKEN")
+          repo     = os.environ["GH_REPO"]
+          if not gh_token:
+              print("WARNING: GH_PAT secret not set — update IG_ACCESS_TOKEN manually.")
+              print(f"New token: {new_token}")
+          else:
+              # GitHub requires the secret value to be encrypted with the repo public key.
+              # For simplicity we print the new token so you can paste it into the secret.
+              print(f"New token obtained. Please update the IG_ACCESS_TOKEN secret in:")
+              print(f"  https://github.com/{repo}/settings/secrets/actions")
+              print(f"  New token: {new_token}")
+          PYEOF

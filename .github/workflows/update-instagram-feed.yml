@@ -1,0 +1,115 @@
+name: Refresh Instagram Feed
+
+# Runs every Sunday at midnight UTC, and can be triggered manually
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests pillow
+
+      - name: Fetch Instagram feed and download images
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          python3 - <<'PYEOF'
+          import os, json, requests, datetime
+          from pathlib import Path
+
+          TOKEN   = os.environ["IG_ACCESS_TOKEN"]
+          IMG_DIR = Path("images/instagram")
+          IMG_DIR.mkdir(parents=True, exist_ok=True)
+
+          # ── 1. Fetch up to 24 latest posts from the Graph API ──────────────
+          url = (
+              "https://graph.instagram.com/me/media"
+              "?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp"
+              f"&limit=24&access_token={TOKEN}"
+          )
+          resp = requests.get(url, timeout=30)
+          resp.raise_for_status()
+          raw_posts = resp.json().get("data", [])
+          print(f"Fetched {len(raw_posts)} posts from Instagram API")
+
+          # ── 2. Download each image locally ─────────────────────────────────
+          posts = []
+          for post in raw_posts:
+              pid        = post["id"]
+              mtype      = post.get("media_type", "IMAGE")
+              img_url    = post.get("thumbnail_url") if mtype == "VIDEO" else post.get("media_url")
+              permalink  = post.get("permalink", "")
+              caption    = (post.get("caption") or "").strip()
+              timestamp  = post.get("timestamp", "")
+
+              if not img_url:
+                  continue
+
+              # Save image as ig_<id>.jpg
+              local_path = IMG_DIR / f"ig_{pid}.jpg"
+              if not local_path.exists():
+                  try:
+                      img_resp = requests.get(img_url, timeout=30, stream=True)
+                      img_resp.raise_for_status()
+                      with open(local_path, "wb") as f:
+                          for chunk in img_resp.iter_content(8192):
+                              f.write(chunk)
+                      print(f"  Downloaded {local_path.name}")
+                  except Exception as e:
+                      print(f"  WARNING: Could not download {pid}: {e}")
+                      continue
+
+              posts.append({
+                  "id":          pid,
+                  "media_type":  mtype,
+                  "permalink":   permalink,
+                  "local_image": f"images/instagram/ig_{pid}.jpg",
+                  "caption":     caption[:200],   # trim very long captions
+                  "timestamp":   timestamp,
+                  "tags":        []               # tags managed manually in json
+              })
+
+          # ── 3. Merge tags from existing ig-feed.json (preserve manual tags) ─
+          feed_path = Path("data/ig-feed.json")
+          existing_tags = {}
+          if feed_path.exists():
+              old = json.loads(feed_path.read_text())
+              for p in old.get("posts", []):
+                  existing_tags[p["id"]] = p.get("tags", [])
+
+          for p in posts:
+              p["tags"] = existing_tags.get(p["id"], [])
+
+          # ── 4. Write data/ig-feed.json ──────────────────────────────────────
+          feed = {
+              "updated":     datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+              "username":    "cakedudes.ca",
+              "profile_url": "https://www.instagram.com/cakedudes.ca/",
+              "posts":       posts
+          }
+          feed_path.write_text(json.dumps(feed, indent=2, ensure_ascii=False))
+          print(f"Wrote {len(posts)} posts to data/ig-feed.json")
+          PYEOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ig-feed.json images/instagram/
+          git diff --cached --quiet || git commit -m "chore: refresh Instagram feed [skip ci]"
+          git push

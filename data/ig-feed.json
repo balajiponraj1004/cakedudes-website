@@ -1,0 +1,115 @@
+{
+  "updated": "2026-05-19T00:00:00Z",
+  "username": "cakedudes.ca",
+  "profile_url": "https://www.instagram.com/cakedudes.ca/",
+  "posts": [
+    {
+      "id": "DUd4c69E6di",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DUd4c69E6di/",
+      "local_image": "images/instagram/ig_01_DUd4c69E6di.jpg",
+      "caption": "Valentine's Day heart-shaped cake 💕 Custom orders welcome!",
+      "timestamp": "2025-02-14T12:00:00Z",
+      "tags": ["heart-shape"]
+    },
+    {
+      "id": "DTiZRJeDWbz",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DTiZRJeDWbz/",
+      "local_image": "images/instagram/ig_02_DTiZRJeDWbz.jpg",
+      "caption": "Happy Pongal! 🌾 Festive celebration cake crafted with love.",
+      "timestamp": "2025-01-15T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DTiQJcyjR-I",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DTiQJcyjR-I/",
+      "local_image": "images/instagram/ig_03_DTiQJcyjR-I.jpg",
+      "caption": "Pongal special cake 🎉",
+      "timestamp": "2025-01-14T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DS-TWD9DYAq",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DS-TWD9DYAq/",
+      "local_image": "images/instagram/ig_04_DS-TWD9DYAq.jpg",
+      "caption": "New Year 2025 cake ✨ Wishing everyone a sweet year ahead!",
+      "timestamp": "2025-01-01T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DS5PeEkDYAN",
+      "media_type": "VIDEO",
+      "permalink": "https://www.instagram.com/p/DS5PeEkDYAN/",
+      "local_image": "images/instagram/ig_05_DS5PeEkDYAN.jpg",
+      "caption": "New Year cake reel 🎥🎂",
+      "timestamp": "2025-01-01T10:00:00Z",
+      "tags": ["single"]
+    },
+    {
+      "id": "DSyTpetgC6S",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DSyTpetgC6S/",
+      "local_image": "images/instagram/ig_06_DSyTpetgC6S.jpg",
+      "caption": "Elegant double-tier designer cake 🎂",
+      "timestamp": "2024-12-28T12:00:00Z",
+      "tags": ["double"]
+    },
+    {
+      "id": "DSssa8zEdeM",
+      "media_type": "VIDEO",
+      "permalink": "https://www.instagram.com/p/DSssa8zEdeM/",
+      "local_image": "images/instagram/ig_07_DSssa8zEdeM.jpg",
+      "caption": "Merry Christmas! 🎄 Our festive cake reel.",
+      "timestamp": "2024-12-25T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DSso6ZakRZA",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DSso6ZakRZA/",
+      "local_image": "images/instagram/ig_08_DSso6ZakRZA.jpg",
+      "caption": "Christmas cake 🎄❄️ Custom designs for the holiday season.",
+      "timestamp": "2024-12-24T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DSsQH1QjTbl",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DSsQH1QjTbl/",
+      "local_image": "images/instagram/ig_09_DSsQH1QjTbl.jpg",
+      "caption": "Showcase single-tier cake 🧁 Pure artistry.",
+      "timestamp": "2024-12-23T12:00:00Z",
+      "tags": ["single"]
+    },
+    {
+      "id": "DSdXOeFkRnz",
+      "media_type": "IMAGE",
+      "permalink": "https://www.instagram.com/p/DSdXOeFkRnz/",
+      "local_image": "images/instagram/ig_10_DSdXOeFkRnz.jpg",
+      "caption": "Festive designer cake — every detail handcrafted 🌟",
+      "timestamp": "2024-12-20T12:00:00Z",
+      "tags": ["classic"]
+    },
+    {
+      "id": "DSNWAtyDUI0",
+      "media_type": "VIDEO",
+      "permalink": "https://www.instagram.com/p/DSNWAtyDUI0/",
+      "local_image": "images/instagram/ig_11_DSNWAtyDUI0.jpg",
+      "caption": "Birthday cake reel 🎂🎉 Watch the magic happen!",
+      "timestamp": "2024-12-18T12:00:00Z",
+      "tags": ["single"]
+    },
+    {
+      "id": "DSKu-TCDVr-",
+      "media_type": "VIDEO",
+      "permalink": "https://www.instagram.com/p/DSKu-TCDVr-/",
+      "local_image": "images/instagram/ig_12_DSKu-TCDVr-.jpg",
+      "caption": "Snowy Berry Cup reel ❄️🍓 Our signature cupcake creation.",
+      "timestamp": "2024-12-15T12:00:00Z",
+      "tags": ["cupcakes"]
+    }
+  ]
+}

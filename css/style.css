@@ -217,6 +217,15 @@ p  { font-size: 0.95rem; color: var(--text-mid); line-height: 1.8; }
 }
 .nav-links a:hover { color: var(--gold); }
 .nav-links a:hover::after { right: 0; }
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: var(--brown) !important;
+  font-weight: 700;
+}
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after {
+  width: 100% !important;
+}
 
 /* Scrolled: dark links */
 .navbar.scrolled .nav-links a,

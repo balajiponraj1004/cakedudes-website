@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const num = '14379871237';
-      const msg = encodeURIComponent(link.dataset.whatsapp || 'Hi Cake Beauties! I\'d like to inquire about a custom cake. 🎂');
+      const msg = encodeURIComponent(link.dataset.whatsapp || 'Hi The Cake Dudes! I\'d like to inquire about a custom cake. 🎂');
       window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
     });
   });
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const notes = orderForm.querySelector('[name="notes"]')?.value || '';
         const num = '14379871237';
         const msg = encodeURIComponent(
-          `Hi Cake Beauties! I'd like to order a custom cake. 🎂\n\nName: ${name}\nEvent: ${event}\nDate: ${date}\nFlavour: ${flavour}\nNotes: ${notes}`
+          `Hi The Cake Dudes! I'd like to order a custom cake. 🎂\n\nName: ${name}\nEvent: ${event}\nDate: ${date}\nFlavour: ${flavour}\nNotes: ${notes}`
         );
         window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
       });
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ── Utility: open WhatsApp globally ──
 function openWhatsApp(msg) {
   const num = '14379871237';
-  const text = encodeURIComponent(msg || 'Hi Cake Beauties! I\'d like to order a custom cake. 🎂');
+  const text = encodeURIComponent(msg || 'Hi The Cake Dudes! I\'d like to order a custom cake. 🎂');
   window.open(`https://wa.me/${num}?text=${text}`, '_blank');
 }
 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | The Cake Dudes</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/png" href="images/logo-yellow.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .notfound-wrap {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 40px 24px;
+      background: var(--cream-light);
+    }
+    .notfound-emoji { font-size: 5rem; margin-bottom: 20px; }
+    .notfound-code {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 7rem; font-weight: 700; line-height: 1;
+      color: var(--gold); margin-bottom: 8px;
+      text-shadow: 3px 3px 0 var(--brown);
+    }
+    .notfound-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--brown); margin-bottom: 16px;
+    }
+    .notfound-p { color: var(--text-light); max-width: 420px; margin: 0 auto 36px; line-height: 1.7; }
+    .notfound-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled-always">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-brown.png" class="nav-logo-img logo-dark" alt="The Cake Dudes" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="order.html">Order</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="order.html" class="btn btn-primary btn-sm">Order Now ✦</a>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <button class="mobile-menu-close">✕</button>
+  <a href="index.html">Home</a><a href="gallery.html">Gallery</a><a href="order.html">Order a Cake</a><a href="about.html">Our Story</a><a href="contact.html">Contact</a>
+  <a href="order.html" class="btn btn-primary">Order Now ✦</a>
+</div>
+
+<div class="notfound-wrap">
+  <div class="notfound-emoji">🎂</div>
+  <div class="notfound-code">404</div>
+  <h1 class="notfound-h1">This Page Has Left the Oven</h1>
+  <p class="notfound-p">
+    Looks like the page you're looking for got baked away. It might have been moved, renamed, or — like all good things — it just didn't last.
+  </p>
+  <div class="notfound-actions">
+    <a href="index.html" class="btn btn-primary btn-lg">Go Back Home ✦</a>
+    <a href="gallery.html" class="btn btn-secondary btn-lg">Browse Cakes</a>
+    <a href="order.html" class="btn btn-secondary btn-lg">Order a Cake</a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,20 @@
   <meta name="geo.placename" content="Mississauga, Ontario, Canada" />
   <meta name="geo.position" content="43.6095;-79.5933" />
   <meta name="ICBM" content="43.6095, -79.5933" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thecakedudes.com/contact.html" />
+  <meta property="og:site_name" content="The Cake Dudes" />
+  <meta property="og:title" content="Contact The Cake Dudes | Custom Cakes Toronto & GTA" />
+  <meta property="og:description" content="Contact The Cake Dudes for custom cake orders in Toronto, Brampton, Mississauga & GTA. WhatsApp, phone & email. Fast 2-hour response." />
+  <meta property="og:image" content="https://www.thecakedudes.com/images/cakes/newcake3.jpeg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact The Cake Dudes | Toronto Custom Cakes" />
+  <meta name="twitter:description" content="Custom cake orders for Toronto & GTA. WhatsApp, phone & email. 2-hour response." />
+  <meta name="twitter:image" content="https://www.thecakedudes.com/images/cakes/newcake3.jpeg" />
   <link rel="canonical" href="https://www.thecakedudes.com/contact.html" />
+  <link rel="icon" type="image/png" href="images/logo-yellow.png" />
+  <link rel="apple-touch-icon" href="images/logo-yellow.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
@@ -52,7 +65,7 @@
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="order.html">Order</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
     </ul>
     <div class="nav-cta">
       <a href="order.html" class="btn btn-primary btn-sm">Order Now ✦</a>
@@ -105,11 +118,11 @@
             </div>
             <span style="margin-left:auto; color:var(--gold-dark); font-size:1.2rem;">→</span>
           </a>
-          <a href="https://www.instagram.com/cakedudes.tnj/" target="_blank" rel="noopener" class="contact-method">
+          <a href="https://www.instagram.com/cakedudes.ca/" target="_blank" rel="noopener" class="contact-method">
             <div class="contact-method-icon" style="background:rgba(225,48,108,0.1); color:#E1306C; font-size:1.6rem;">📸</div>
             <div class="contact-method-text">
               <strong>Instagram DM</strong>
-              <span>@cakedudes.tnj · Send us your reference photos here</span>
+              <span>@cakedudes.ca · Send us your reference photos here</span>
             </div>
             <span style="margin-left:auto; color:var(--gold-dark); font-size:1.2rem;">→</span>
           </a>
@@ -193,12 +206,17 @@
           </form>
         </div>
 
-        <!-- Map Placeholder -->
-        <div class="map-placeholder" style="margin-top: 24px;">
-          <span>📍</span>
-          <span>3415 Dixie Rd, Unit 3B, Mississauga, ON L4Y 2B1</span>
-          <p style="font-size:0.8rem; color:var(--text-light); text-align:center; max-width:280px; margin-top:8px;">Studio pickup available. Contact us for exact directions and parking info.</p>
-          <a href="https://maps.google.com/?q=3415+Dixie+Rd+Unit+3B+Mississauga+ON+L4Y+2B1" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Open in Google Maps →</a>
+        <!-- Google Maps Embed -->
+        <div style="margin-top: 24px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
+          <iframe
+            src="https://maps.google.com/maps?q=3415+Dixie+Rd+Mississauga+ON+L4Y+2B1+Canada&output=embed&z=15"
+            width="100%" height="260" style="border:0; display:block;"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="The Cake Dudes studio location — 3415 Dixie Rd, Mississauga"></iframe>
+          <div style="background:var(--cream-light); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <span style="font-size:0.85rem; color:var(--brown); font-weight:600;">📍 3415 Dixie Rd, Unit 3B, Mississauga, ON L4Y 2B1</span>
+            <a href="https://maps.google.com/?q=3415+Dixie+Rd+Unit+3B+Mississauga+ON+L4Y+2B1" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Open in Google Maps →</a>
+          </div>
         </div>
       </div>
 
