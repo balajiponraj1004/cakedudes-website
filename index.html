@@ -521,33 +521,33 @@
   .ig-highlights-wrap::-webkit-scrollbar { display: none; }
 
   .ig-highlights {
-    display: flex; align-items: flex-start; justify-content: center;
-    gap: 28px; padding: 8px 16px;
+    display: flex; align-items: flex-start; justify-content: flex-start;
+    gap: 18px; padding: 8px 4px;
     width: max-content; margin: 0 auto;
   }
 
-  /* Single highlight bubble */
+  /* Single highlight bubble — Instagram Highlights style */
   .ig-hl {
     display: flex; flex-direction: column; align-items: center;
-    gap: 8px; cursor: pointer; min-width: 72px;
+    gap: 6px; cursor: pointer; min-width: 77px;
+    -webkit-tap-highlight-color: transparent;
   }
 
-  /* Gradient ring — inactive */
+  /* Gradient ring — ALWAYS visible on every circle (authentic Instagram look).
+     Inactive = 40% opacity (like a "viewed" story).
+     Active   = 100% opacity (the selected filter). */
   .ig-hl-ring {
-    width: 72px; height: 72px; border-radius: 50%;
+    width: 77px; height: 77px; border-radius: 50%;
     padding: 3px;
-    background: rgba(67,29,19,.12);
-    transition: background .3s ease, transform .25s ease;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    opacity: .4;
+    transition: opacity .25s ease, transform .22s ease;
     flex-shrink: 0;
   }
-  .ig-hl:hover .ig-hl-ring { transform: scale(1.08); }
+  .ig-hl:hover .ig-hl-ring { opacity: .7; transform: scale(1.06); }
+  .ig-hl.active .ig-hl-ring { opacity: 1; }
 
-  /* Active ring — Instagram gradient */
-  .ig-hl.active .ig-hl-ring {
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  }
-
-  /* Inner circle (white gap between ring and image) */
+  /* Inner circle — white gap then the image */
   .ig-hl-inner {
     width: 100%; height: 100%; border-radius: 50%;
     background: var(--wh); padding: 3px;
@@ -555,34 +555,33 @@
     display: flex; align-items: center; justify-content: center;
   }
 
-  /* Image inside circle */
+  /* Photo inside circle */
   .ig-hl-inner img {
     width: 100%; height: 100%; border-radius: 50%;
     object-fit: cover; display: block;
   }
 
-  /* "All" highlight uses an icon grid */
+  /* Icon circle (All Posts & emoji categories) */
   .ig-hl-icon {
     width: 100%; height: 100%; border-radius: 50%;
     background: var(--y);
     display: flex; align-items: center; justify-content: center;
+    font-style: normal;
   }
   .ig-hl-icon svg { width: 28px; height: 28px; fill: var(--br); }
 
-  /* Label below circle */
+  /* Label — Instagram uses small regular-weight text, no uppercase */
   .ig-hl-label {
-    font-size: .66rem; font-weight: 700; letter-spacing: .08em;
-    text-transform: uppercase; color: var(--brm); text-align: center;
-    line-height: 1.3; max-width: 72px;
-    transition: color .25s ease;
+    font-size: .72rem; font-weight: 400; letter-spacing: .01em;
+    text-transform: none; color: #555; text-align: center;
+    line-height: 1.2; max-width: 77px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    transition: font-weight .15s ease, color .15s ease;
   }
-  .ig-hl.active .ig-hl-label { color: var(--br); }
+  .ig-hl.active .ig-hl-label { font-weight: 600; color: var(--br); }
 
-  /* Post count badge */
-  .ig-hl-count {
-    font-size: .58rem; color: rgba(67,29,19,.45); font-weight: 600;
-    letter-spacing: .04em;
-  }
+  /* Post count — hidden (Instagram highlights don't show counts) */
+  .ig-hl-count { display: none; }
 
   /* Hidden posts during filter */
   .ig-post.ig-hidden { display: none; }
