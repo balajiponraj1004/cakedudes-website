@@ -482,12 +482,13 @@
   }
   .ig-profile-left { display: flex; align-items: center; gap: 24px; }
   .ig-avatar {
-    width: 80px; height: 80px; border-radius: 50%;
-    background: var(--br); overflow: hidden;
-    border: 4px solid var(--br); flex-shrink: 0;
+    width: 84px; height: 84px; border-radius: 50%;
+    background: var(--y);
+    overflow: hidden; flex-shrink: 0;
+    border: 3px solid var(--br);
     display: flex; align-items: center; justify-content: center;
   }
-  .ig-avatar img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+  .ig-avatar img { width: 72px; height: 72px; object-fit: contain; display: block; }
   .ig-handle { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--br); }
   .ig-name   { font-size: .80rem; color: var(--brm); margin-top: 2px; }
   .ig-stats  { display: flex; gap: 28px; font-size: .80rem; color: var(--brm); margin-top: 8px; }
@@ -527,75 +528,6 @@
   .ig-post-overlay svg  { width: 26px; height: 26px; fill: var(--y); }
   .ig-post-overlay span { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(249,200,62,.9); font-weight: 700; }
 
-  /* ── Instagram Highlights-style Category Filter ── */
-  .ig-highlights-wrap {
-    overflow-x: auto; -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; margin-bottom: 40px;
-  }
-  .ig-highlights-wrap::-webkit-scrollbar { display: none; }
-
-  .ig-highlights {
-    display: flex; align-items: flex-start; justify-content: flex-start;
-    gap: 18px; padding: 8px 4px;
-    width: max-content; margin: 0 auto;
-  }
-
-  /* Single highlight bubble — Instagram Highlights style */
-  .ig-hl {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 6px; cursor: pointer; min-width: 77px;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  /* Gradient ring — ALWAYS visible on every circle (authentic Instagram look).
-     Inactive = 40% opacity (like a "viewed" story).
-     Active   = 100% opacity (the selected filter). */
-  .ig-hl-ring {
-    width: 77px; height: 77px; border-radius: 50%;
-    padding: 3px;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    opacity: .4;
-    transition: opacity .25s ease, transform .22s ease;
-    flex-shrink: 0;
-  }
-  .ig-hl:hover .ig-hl-ring { opacity: .7; transform: scale(1.06); }
-  .ig-hl.active .ig-hl-ring { opacity: 1; }
-
-  /* Inner circle — white gap then the image */
-  .ig-hl-inner {
-    width: 100%; height: 100%; border-radius: 50%;
-    background: var(--wh); padding: 3px;
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  /* Photo inside circle */
-  .ig-hl-inner img {
-    width: 100%; height: 100%; border-radius: 50%;
-    object-fit: cover; display: block;
-  }
-
-  /* Icon circle (All Posts & emoji categories) */
-  .ig-hl-icon {
-    width: 100%; height: 100%; border-radius: 50%;
-    background: var(--y);
-    display: flex; align-items: center; justify-content: center;
-    font-style: normal;
-  }
-  .ig-hl-icon svg { width: 28px; height: 28px; fill: var(--br); }
-
-  /* Label — Instagram uses small regular-weight text, no uppercase */
-  .ig-hl-label {
-    font-size: .72rem; font-weight: 400; letter-spacing: .01em;
-    text-transform: none; color: #555; text-align: center;
-    line-height: 1.2; max-width: 77px;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    transition: font-weight .15s ease, color .15s ease;
-  }
-  .ig-hl.active .ig-hl-label { font-weight: 600; color: var(--br); }
-
-  /* Post count — hidden (Instagram highlights don't show counts) */
-  .ig-hl-count { display: none; }
 
   /* Reel badge — top-right corner of video tiles */
   .ig-reel-badge {
@@ -867,7 +799,7 @@
         <div class="cat-name">Birthday Cakes</div>
         <div class="cat-desc">Show-stopping designs for every age and theme</div>
         <span class="cat-link">Explore →</span>
-        <button class="cat-ig-btn" data-ig-filter="single" onclick="event.preventDefault();igFilter('single')"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
+        <button class="cat-ig-btn" onclick="event.preventDefault();document.getElementById('instagram').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
       </div>
     </a>
     <a class="cat-card" href="gallery.html?filter=kids">
@@ -877,7 +809,7 @@
         <div class="cat-name">Kids Theme Cakes</div>
         <div class="cat-desc">Characters, superheroes and dream themes</div>
         <span class="cat-link">Explore →</span>
-        <button class="cat-ig-btn" data-ig-filter="spider-man" onclick="event.preventDefault();igFilter('spider-man')"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
+        <button class="cat-ig-btn" onclick="event.preventDefault();document.getElementById('instagram').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
       </div>
     </a>
     <a class="cat-card" href="gallery.html?filter=wedding">
@@ -887,7 +819,7 @@
         <div class="cat-name">Wedding &amp; Occasions</div>
         <div class="cat-desc">Elegant tiered cakes for your most special day</div>
         <span class="cat-link">Explore →</span>
-        <button class="cat-ig-btn" data-ig-filter="classic" onclick="event.preventDefault();igFilter('classic')"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
+        <button class="cat-ig-btn" onclick="event.preventDefault();document.getElementById('instagram').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
       </div>
     </a>
     <a class="cat-card" href="gallery.html?filter=designer">
@@ -897,7 +829,7 @@
         <div class="cat-name">Designer Cakes</div>
         <div class="cat-desc">Sculpted, fondant &amp; luxury statement cakes</div>
         <span class="cat-link">Explore →</span>
-        <button class="cat-ig-btn" data-ig-filter="double" onclick="event.preventDefault();igFilter('double')"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
+        <button class="cat-ig-btn" onclick="event.preventDefault();document.getElementById('instagram').scrollIntoView({behavior:'smooth'})"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>Instagram ↓</button>
       </div>
     </a>
   </div>
@@ -917,7 +849,7 @@
     <div class="ig-profile">
       <div class="ig-profile-left">
         <div class="ig-avatar">
-          <img src="images/logo-brown.png" alt="The Cake Dudes logo" />
+          <img src="images/logo-brown.png" alt="The Cake Dudes logo" width="72" height="72" />
         </div>
         <div>
           <div class="ig-handle">@cakedudes.ca</div>
@@ -935,160 +867,6 @@
       </a>
     </div>
 
-    <!-- Instagram Highlights-style category filter -->
-    <div class="ig-highlights-wrap">
-      <div class="ig-highlights" id="ig-filter-bar" role="group" aria-label="Filter posts by category">
-
-        <!-- All Posts -->
-        <div class="ig-hl active" data-cat="all" role="button" tabindex="0" aria-label="Show all posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <span class="ig-hl-label">All Posts</span>
-          <span class="ig-hl-count">12 posts</span>
-        </div>
-
-        <!-- Cupcakes -->
-        <div class="ig-hl" data-cat="cupcakes" role="button" tabindex="0" aria-label="Show cupcake posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <img src="images/instagram/ig_12_DSKu-TCDVr-.jpg" alt="Cupcakes"/>
-            </div>
-          </div>
-          <span class="ig-hl-label">Cupcakes</span>
-          <span class="ig-hl-count">1 post</span>
-        </div>
-
-        <!-- Heart Shape -->
-        <div class="ig-hl" data-cat="heart-shape" role="button" tabindex="0" aria-label="Show heart shape posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <img src="images/instagram/ig_01_DUd4c69E6di.jpg" alt="Heart shape cakes"/>
-            </div>
-          </div>
-          <span class="ig-hl-label">Heart Shape</span>
-          <span class="ig-hl-count">1 post</span>
-        </div>
-
-        <!-- Single -->
-        <div class="ig-hl" data-cat="single" role="button" tabindex="0" aria-label="Show single tier posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <img src="images/instagram/ig_11_DSNWAtyDUI0.jpg" alt="Single tier cakes"/>
-            </div>
-          </div>
-          <span class="ig-hl-label">Single</span>
-          <span class="ig-hl-count">3 posts</span>
-        </div>
-
-        <!-- Classic -->
-        <div class="ig-hl" data-cat="classic" role="button" tabindex="0" aria-label="Show classic posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <img src="images/instagram/ig_04_DS-TWD9DYAq.jpg" alt="Classic cakes"/>
-            </div>
-          </div>
-          <span class="ig-hl-label">Classic</span>
-          <span class="ig-hl-count">6 posts</span>
-        </div>
-
-        <!-- Double -->
-        <div class="ig-hl" data-cat="double" role="button" tabindex="0" aria-label="Show double tier posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <img src="images/instagram/ig_10_DSdXOeFkRnz.jpg" alt="Double tier cakes"/>
-            </div>
-          </div>
-          <span class="ig-hl-label">Double</span>
-          <span class="ig-hl-count">1 post</span>
-        </div>
-
-        <!-- Games -->
-        <div class="ig-hl" data-cat="games" role="button" tabindex="0" aria-label="Show games posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">🎮</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Games</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- Number Shape -->
-        <div class="ig-hl" data-cat="number-shape" role="button" tabindex="0" aria-label="Show number shape posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">🔢</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Number Shape</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- Spider Man -->
-        <div class="ig-hl" data-cat="spider-man" role="button" tabindex="0" aria-label="Show Spider Man posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">🕷️</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Spider Man</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- Sheet Cake -->
-        <div class="ig-hl" data-cat="sheet-cake" role="button" tabindex="0" aria-label="Show sheet cake posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">🍰</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Sheet Cake</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- DOME -->
-        <div class="ig-hl" data-cat="dome" role="button" tabindex="0" aria-label="Show dome posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">🔮</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">DOME</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- Barbie -->
-        <div class="ig-hl" data-cat="barbie" role="button" tabindex="0" aria-label="Show Barbie posts">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">👗</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Barbie</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-        <!-- Reviews -->
-        <div class="ig-hl" data-cat="reviews" role="button" tabindex="0" aria-label="Show reviews">
-          <div class="ig-hl-ring">
-            <div class="ig-hl-inner">
-              <div class="ig-hl-icon" style="font-size:1.8rem">⭐</div>
-            </div>
-          </div>
-          <span class="ig-hl-label">Reviews</span>
-          <span class="ig-hl-count">On Instagram</span>
-        </div>
-
-      </div>
-    </div>
   </div><!-- /ig-sec-inner -->
 
   <!-- Grid — full viewport width, no container cap -->
@@ -1119,9 +897,7 @@
    using the Instagram Graph API (IG_ACCESS_TOKEN secret).
    ════════════════════════════════════════════════════════════════ */
 
-var IG_FEED_URL  = 'data/ig-feed.json';
-var IG_POSTS     = [];   /* populated after fetch */
-var IG_ACTIVE_CAT = 'all';
+var IG_FEED_URL = 'data/ig-feed.json';
 
 /* SVG icons (inline, no external dependency) */
 var SVG_IG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>';
@@ -1129,16 +905,14 @@ var SVG_REEL = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69
 
 /* Build one post tile from a data object */
 function buildPostTile(post) {
-  var isReel   = post.media_type === 'VIDEO';
-  var label    = isReel ? 'Watch Reel' : 'View Post';
-  var cats     = (post.tags || []).join(' ') || 'all';
-  var caption  = post.caption ? post.caption.replace(/"/g, '&quot;') : '';
+  var isReel    = post.media_type === 'VIDEO';
+  var label     = isReel ? 'Watch Reel' : 'View Post';
+  var caption   = post.caption ? post.caption.replace(/"/g, '&quot;') : '';
   var reelBadge = isReel
     ? '<span class="ig-reel-badge" aria-label="Reel">' + SVG_REEL + '</span>'
     : '';
   return (
-    '<a class="ig-post" data-cat="' + cats + '"' +
-    '   href="' + post.permalink + '" target="_blank" rel="noopener"' +
+    '<a class="ig-post" href="' + post.permalink + '" target="_blank" rel="noopener"' +
     '   aria-label="' + (caption.slice(0, 80) || 'View on Instagram') + '">' +
     '  <img src="' + post.local_image + '" alt="' + caption.slice(0, 60) + '" loading="lazy"/>' +
     reelBadge +
@@ -1147,42 +921,7 @@ function buildPostTile(post) {
   );
 }
 
-/* Render / re-render the grid based on active category */
-function igFilter(cat) {
-  IG_ACTIVE_CAT = cat;
-
-  /* Update active highlight bubble */
-  document.querySelectorAll('#ig-filter-bar .ig-hl').forEach(function(hl) {
-    hl.classList.toggle('active', hl.getAttribute('data-cat') === cat);
-  });
-
-  var grid = document.getElementById('ig-grid');
-  if (!grid) return;
-
-  /* Filter from in-memory post list */
-  var filtered = cat === 'all'
-    ? IG_POSTS
-    : IG_POSTS.filter(function(p) { return (p.tags || []).indexOf(cat) !== -1; });
-
-  if (filtered.length === 0) {
-    /* Empty state — link to Instagram */
-    grid.innerHTML =
-      '<div class="ig-empty" style="grid-column:1/-1;text-align:center;padding:48px 16px;">' +
-      '<p style="color:var(--br);font-size:1rem;margin-bottom:16px;">More in this category on Instagram!</p>' +
-      '<a href="https://www.instagram.com/cakedudes.ca/" target="_blank" rel="noopener"' +
-      '   style="display:inline-block;background:var(--br);color:var(--y);padding:12px 32px;' +
-      '          border-radius:100px;font-weight:700;font-size:.85rem;letter-spacing:.08em;text-decoration:none;">' +
-      'View on Instagram →</a></div>';
-  } else {
-    grid.innerHTML = filtered.map(buildPostTile).join('');
-  }
-
-  /* Smooth scroll to section */
-  var sec = document.getElementById('instagram');
-  if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-/* Fetch data/ig-feed.json and bootstrap the grid */
+/* Fetch data/ig-feed.json and render all posts */
 function loadIgFeed() {
   fetch(IG_FEED_URL)
     .then(function(r) {
@@ -1190,12 +929,17 @@ function loadIgFeed() {
       return r.json();
     })
     .then(function(data) {
-      IG_POSTS = data.posts || [];
-      igFilter('all');   /* render all posts and clear skeletons */
+      var grid  = document.getElementById('ig-grid');
+      if (!grid) return;
+      var posts = data.posts || [];
+      grid.innerHTML = posts.length
+        ? posts.map(buildPostTile).join('')
+        : '<div style="grid-column:1/-1;text-align:center;padding:48px 16px;">' +
+          '<a href="https://www.instagram.com/cakedudes.ca/" target="_blank" rel="noopener"' +
+          '   style="color:var(--br);font-weight:700;">View on Instagram →</a></div>';
     })
     .catch(function(err) {
       console.warn('ig-feed fetch failed:', err);
-      /* Show fallback error state */
       var grid = document.getElementById('ig-grid');
       if (grid) {
         grid.innerHTML =
@@ -1207,16 +951,7 @@ function loadIgFeed() {
     });
 }
 
-/* Wire up highlight circles + keyboard support, then load feed */
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('#ig-filter-bar .ig-hl').forEach(function(hl) {
-    hl.addEventListener('click', function() { igFilter(hl.getAttribute('data-cat')); });
-    hl.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); igFilter(hl.getAttribute('data-cat')); }
-    });
-  });
-  loadIgFeed();
-});
+document.addEventListener('DOMContentLoaded', loadIgFeed);
 </script>
 
 
